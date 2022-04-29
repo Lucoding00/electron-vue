@@ -10,7 +10,7 @@ function getCurrentSHA (author) {
 
     get({
       host: 'api.github.com',
-      path: `/repos/simulatedgreg/electron-vue/commits${isBranch ? '?sha=' + process.argv[2].split('#')[1] : ''}`,
+      path: `/repos/ceoifung/electron-vue/commits${isBranch ? '?sha=' + process.argv[2].split('#')[1] : ''}`,
       headers: {
         'User-Agent': author
       }
@@ -40,7 +40,7 @@ function appendSHALink (sha, destDirName) {
   let md = readFileSync(readmePath, 'utf8')
   md = md.replace(
     ' using',
-    `@[${sha.substring(0, 7)}](https://github.com/SimulatedGREG/electron-vue/tree/${sha}) using`
+    `@[${sha.substring(0, 7)}](https://github.com/ceoifung/electron-vue/tree/${sha}) using`
   )
   writeFileSync(readmePath, md, 'utf8')
 }
@@ -149,7 +149,7 @@ module.exports = {
         'vue-electron': '^1.0.6',
         'vue-router': '^3.0.1',
         'vuex': '^3.0.1',
-        'vuex-electron': '^1.0.0'
+        'vuex-electron': '^github:ceoifung/vuex-electron'
       }
 
       if (Object.keys(plugins).length > 0) output += ',\n'
