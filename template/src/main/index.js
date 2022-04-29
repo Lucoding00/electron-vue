@@ -1,3 +1,11 @@
+/*
+ * @Author: Ceoifung
+ * @Date: 2022-04-29 17:09:41
+ * @LastEditTime: 2022-04-29 17:34:29
+ * @LastEditors: Ceoifung
+ * @Description: 
+ * XiaoRGEEK All Rights Reserved, Powered by Ceoifung
+ */
 {{#if_eq eslintConfig 'standard'}}
 'use strict'
 
@@ -27,7 +35,11 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 563,
     useContentSize: true,
-    width: 1000
+    width: 1000,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false
+    }
   })
 
   mainWindow.loadURL(winURL)
@@ -37,6 +49,8 @@ function createWindow () {
   })
 }
 
+// if you want load native module like serialport set follow code
+// app.allowRendererProcessReuse = false 
 app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {
