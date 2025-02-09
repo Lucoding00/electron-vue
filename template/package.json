@@ -150,8 +150,8 @@
     {{/testing}}
     "node-loader": "^0.6.0",
     {{#if usesass}}
-    "node-sass": "^4.9.2",
-    "sass-loader": "^7.0.3",
+    "sass": "^1.69.0",
+    "sass-loader": "^13.3.2",
     {{/if}}
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
